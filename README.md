@@ -82,7 +82,8 @@ Step 7: Open the Application
 
 Open your browser and go to:
 
-http://127.0.0.1:8000
+http://127.0.0.1:5000/
+
 
 Running the Project on Linux (Ubuntu / Debian)
 Step 1: Open Terminal
@@ -114,7 +115,7 @@ Step 8: Open the Application
 
 Open your browser and go to:
 
-http://127.0.0.1:8000
+http://127.0.0.1:5000/
 
 How the System Works
 
