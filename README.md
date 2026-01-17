@@ -1,158 +1,159 @@
-# Natural Language → SQL Reasoning System
+SQL Reasoning System
+Overview
 
-Ask questions in plain English and get:
-- Explicit reasoning
-- Safe SQL queries
-- Correct database results
+The SQL Reasoning System is an intelligent backend-driven application designed to analyze, reason, and respond to complex SQL-related queries.
+It simulates how a system understands database schemas, interprets user intent, applies logical reasoning, and generates correct SQL queries or answers based on structured data.
 
-This project does not translate text to SQL directly.  
-Instead, it reasons step-by-step like a human data analyst.
+The system is useful for interview preparation, learning SQL, backend reasoning demonstrations, AI-assisted query systems, and hackathon projects.
 
----
+Key Features
 
-## Why This Project?
+SQL query understanding and interpretation
 
-Naïve text-to-SQL systems often fail because they:
-- Hallucinate table or column names
-- Guess when queries are ambiguous (for example, “recent” or “best”)
-- Generate unsafe or inefficient SQL
-- Provide no explanation of how the query was formed
+Logical reasoning over relational schemas
 
-Our solution fixes this by reasoning first, then generating SQL.
+Query generation (SELECT, JOIN, GROUP BY, WHERE, HAVING)
 
----
+Error detection and query correction suggestions
 
-## Core Idea
+Multi-table relationship reasoning
 
-Reason → Plan → Generate SQL → Validate → Execute
+SQLite-based sample database
 
-The system explicitly:
-1. Detects user intent  
-2. Explores the database schema  
-3. Builds a reasoning plan  
-4. Generates safe, read-only SQL  
-5. Validates the query  
-6. Executes and explains the results  
+API-driven backend architecture
 
----
+Lightweight frontend for query input and results
 
-## Architecture
+Works on Windows and Linux
 
-Frontend (Web UI or CLI)  
-→ Intent Detection  
-→ Reasoning Planner  
-→ SQL Generator  
-→ Safety Validator  
-→ SQLite Database (Read-only)
+Project Structure
 
----
+sql-reasoning-system/
+├── backend/
+│ ├── main.py
+│ ├── reasoning.py
+│ └── database.py
+├── database/
+│ └── sample.db
+├── frontend/
+│ └── index.html
+├── requirements.txt
+└── README.md
 
-## Features
+Technologies Used
 
-- Natural language questions
-- Explicit reasoning plans
-- Multi-step query handling (joins and aggregations)
-- Ambiguity detection and clarification
-- Schema introspection (meta queries)
-- Safe SQL execution (read-only, no SELECT *)
-- Web interface with CLI fallback
+Python 3.9 or higher
 
----
+FastAPI
 
-## Example Queries
+Uvicorn
 
-Try these in the system:
+SQLite
 
-- How many customers are from Brazil?
-- Which customers have never made a purchase?
-- What tables exist in this database?
-- Show me recent orders
-- Show me orders from the last 30 days
+SQLAlchemy (optional)
 
----
+HTML, CSS, Bootstrap
 
-## Installation Steps
+REST APIs
 
-Follow the steps below to set up and run the project locally.
+Running the Project on Windows
+Step 1: Open Command Prompt or PowerShell
 
----
+Navigate to the project folder:
 
+cd path\to\sql-reasoning-system
 
+Step 2: Create a Virtual Environment
+py -m venv venv
 
-## Installation Steps
-
-Follow the steps below to set up and run the project on your local machine.
-
-### 1. Install Python
-Ensure that Python version 3.10 or higher is installed on your system.
-
-Check the installed Python version by running:
-```bash
-python --version
-```
-Clone the project repository from GitHub using the following command:
-```
-git clone https://github.com/tanushriwarhade/Talk-To-Your-Data.git
-```
-
-Navigate into the project directory:
-```
-cd Talk-To-Your-Data
-```
-Create a virtual environment:
-```
-python -m venv venv
-```
-On Windows:
-```
+Step 3: Activate the Virtual Environment
 venv\Scripts\activate
-```
 
-On macOS or Linux:
-```
+Step 4: Upgrade pip
+python -m pip install --upgrade pip
+
+Step 5: Install Required Packages
+pip install -r requirements.txt
+
+Step 6: Run the Server
+uvicorn backend.main:app --reload
+
+Step 7: Open the Application
+
+Open your browser and go to:
+
+http://127.0.0.1:8000
+
+Running the Project on Linux (Ubuntu / Debian)
+Step 1: Open Terminal
+
+Navigate to the project folder:
+
+cd ~/path/to/sql-reasoning-system
+
+Step 2: Install System Dependencies
+sudo apt update
+sudo apt install python3 python3-venv python3-pip -y
+
+Step 3: Create a Virtual Environment
+python3 -m venv venv
+
+Step 4: Activate the Virtual Environment
 source venv/bin/activate
-```
-Install the required Python dependency using pip:
-```
-pip install flask
-```
-Verify the database setup by running:
-```
-python verify_db.py
-```
-Start the web application using:
-```
-python app.py
-```
 
-Once the server starts, open your browser and navigate to:
-```
-http://127.0.0.1:5000
-```
-If you prefer using the command line or need a fallback during a demo, run:
-```
-python main.py
-```
+Step 5: Upgrade pip
+pip install --upgrade pip
 
-Talk-To-Your-Data/
-│
-├── core/
-│   ├── intent_parser.py      # Detects user intent and ambiguity
-│   ├── planner.py            # Builds the reasoning plan
-│   ├── sql_generator.py      # Generates safe SQL queries
-│   ├── validator.py          # Enforces SQL safety rules
-│   ├── executor.py           # Executes SQL on the database
-│   └── db.py                 # Database connection handler
-│
-├── data/
-│   └── chinook.db             # SQLite database
-│
-├── templates/
-│   └── index.html             # Web interface (frontend)
-│
-├── static/                    # Static files (CSS/JS if extended)
-│
-├── app.py                     # Flask web application entry point
-├── main.py                    # CLI interface
-├── verify_db.py               # Database verification script
-└── README.md                  # Project documentation
+Step 6: Install Required Packages
+pip install -r requirements.txt
+
+Step 7: Run the Server
+uvicorn backend.main:app --reload
+
+Step 8: Open the Application
+
+Open your browser and go to:
+
+http://127.0.0.1:8000
+
+How the System Works
+
+User submits a natural language or semi-structured SQL question
+
+The backend analyzes intent and identifies required tables and relationships
+
+SQL reasoning logic constructs or validates the query
+
+The query is executed on an SQLite database
+
+Results are returned through the API
+
+The frontend displays structured query results
+
+Notes
+
+The reasoning engine is rule-based and designed for clarity and explainability
+
+Sample databases are included for testing
+
+SQL complexity can be increased gradually
+
+Designed for learning, interviews, and hackathon demos
+
+Future Enhancements
+
+Natural language to SQL using LLM integration
+
+Query optimization suggestions
+
+Schema visualization
+
+WebSocket-based live query execution
+
+Support for MySQL and PostgreSQL
+
+Authentication and user query history
+
+Author
+
+Developed as a hackathon-ready SQL Reasoning System for learning, demonstration, and backend intelligence showcasing.
