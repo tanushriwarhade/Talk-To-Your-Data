@@ -77,13 +77,62 @@ Follow the steps below to set up and run the project locally.
 
 ---
 
-### Step 1: Install Python
 
-Ensure Python version 3.10 or higher is installed.
 
-Check your Python version:
+## Installation Steps
+
+Follow the steps below to set up and run the project on your local machine.
+
+### 1. Install Python
+Ensure that Python version 3.10 or higher is installed on your system.
+
+Check the installed Python version by running:
 ```bash
 python --version
+```
+Clone the project repository from GitHub using the following command:
+```
+git clone https://github.com/tanushriwarhade/Talk-To-Your-Data.git
+```
+
+Navigate into the project directory:
+```
+cd Talk-To-Your-Data
+```
+Create a virtual environment:
+```
+python -m venv venv
+```
+On Windows:
+```
+venv\Scripts\activate
+```
+
+On macOS or Linux:
+```
+source venv/bin/activate
+```
+Install the required Python dependency using pip:
+```
+pip install flask
+```
+Verify the database setup by running:
+```
+python verify_db.py
+```
+Start the web application using:
+```
+python app.py
+```
+
+Once the server starts, open your browser and navigate to:
+```
+http://127.0.0.1:5000
+```
+If you prefer using the command line or need a fallback during a demo, run:
+```
+python main.py
+```
 
 Talk-To-Your-Data/
 │
