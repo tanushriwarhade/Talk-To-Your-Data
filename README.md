@@ -1,9 +1,9 @@
 # 🧠 Natural Language → SQL Reasoning System
 
 Ask questions in plain English and get:
-- 🧩 Explicit reasoning
-- 🧾 Safe SQL queries
-- 📊 Correct database results
+-  Explicit reasoning
+-  Safe SQL queries
+-  Correct database results
 
 This project **does not translate text to SQL directly**.  
 Instead, it **reasons step-by-step** like a human data analyst.
@@ -18,7 +18,7 @@ Naïve text-to-SQL systems often fail because they:
 - Generate unsafe or inefficient SQL
 - Provide no explanation of how the query was formed
 
-👉 **Our solution fixes this by reasoning first, then generating SQL.**
+ **Our solution fixes this by reasoning first, then generating SQL.**
 
 ---
 
@@ -36,20 +36,20 @@ The system explicitly:
 
 ---
 
-## 🏗️ Architecture
+## Architecture
 
 
 ---
 
 ## ✨ Features
 
-- ✅ Natural language questions
-- ✅ Explicit reasoning plans
-- ✅ Multi-step query handling (joins, aggregations)
-- ✅ Ambiguity detection & clarification
-- ✅ Schema introspection (meta queries)
-- ✅ Safe SQL execution (read-only, no SELECT *)
-- ✅ Web UI + CLI fallback
+-  Natural language questions
+-  Explicit reasoning plans
+-  Multi-step query handling (joins, aggregations)
+-  Ambiguity detection & clarification
+-  Schema introspection (meta queries)
+-  Safe SQL execution (read-only, no SELECT *)
+-  Web UI + CLI fallback
 
 ---
 
@@ -65,8 +65,20 @@ Try these in the system:
 
 ---
 
-## 🖥️ Running the Project
+##  Running the Project
 
 ### 📁 Step 1: Go to project directory
 ```bash
 cd nl_sql_reasoner
+
+
+##Tree
+Folder PATH listing for volume OS
+Volume serial number is AADA-BDED
+C:.
+├───core
+│   └───__pycache__
+├───data
+├───llm
+├───static
+└───templates
