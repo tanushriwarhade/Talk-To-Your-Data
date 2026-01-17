@@ -6,6 +6,10 @@ It simulates how a system understands database schemas, interprets user intent, 
 
 The system is useful for interview preparation, learning SQL, backend reasoning demonstrations, AI-assisted query systems, and hackathon projects.
 
+
+<img width="1854" height="882" alt="Screenshot 2026-01-17 114948" src="https://github.com/user-attachments/assets/42fe01c9-7643-403f-a75e-b6d4a273a055" />
+<img width="1891" height="896" alt="Screenshot 2026-01-17 115011" src="https://github.com/user-attachments/assets/cc5a03bb-4e49-4e9c-8306-490f50a65a95" />
+
 Key Features
 
 SQL query understanding and interpretation
