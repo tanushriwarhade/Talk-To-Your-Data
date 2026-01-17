@@ -1,84 +1,109 @@
-# 🧠 Natural Language → SQL Reasoning System
+# Natural Language → SQL Reasoning System
 
 Ask questions in plain English and get:
--  Explicit reasoning
--  Safe SQL queries
--  Correct database results
+- Explicit reasoning
+- Safe SQL queries
+- Correct database results
 
-This project **does not translate text to SQL directly**.  
-Instead, it **reasons step-by-step** like a human data analyst.
+This project does not translate text to SQL directly.  
+Instead, it reasons step-by-step like a human data analyst.
 
 ---
 
-## 🚀 Why This Project?
+## Why This Project?
 
 Naïve text-to-SQL systems often fail because they:
 - Hallucinate table or column names
-- Guess when queries are ambiguous (e.g., “recent”, “best”)
+- Guess when queries are ambiguous (for example, “recent” or “best”)
 - Generate unsafe or inefficient SQL
 - Provide no explanation of how the query was formed
 
- **Our solution fixes this by reasoning first, then generating SQL.**
+Our solution fixes this by reasoning first, then generating SQL.
 
 ---
 
-## 🧠 Core Idea
+## Core Idea
 
-> **Reason → Plan → Generate SQL → Validate → Execute**
+Reason → Plan → Generate SQL → Validate → Execute
 
 The system explicitly:
 1. Detects user intent  
-2. Explores database schema  
+2. Explores the database schema  
 3. Builds a reasoning plan  
 4. Generates safe, read-only SQL  
 5. Validates the query  
-6. Executes and explains results  
+6. Executes and explains the results  
 
 ---
 
 ## Architecture
 
+Frontend (Web UI or CLI)  
+→ Intent Detection  
+→ Reasoning Planner  
+→ SQL Generator  
+→ Safety Validator  
+→ SQLite Database (Read-only)
 
 ---
 
-## ✨ Features
+## Features
 
--  Natural language questions
--  Explicit reasoning plans
--  Multi-step query handling (joins, aggregations)
--  Ambiguity detection & clarification
--  Schema introspection (meta queries)
--  Safe SQL execution (read-only, no SELECT *)
--  Web UI + CLI fallback
+- Natural language questions
+- Explicit reasoning plans
+- Multi-step query handling (joins and aggregations)
+- Ambiguity detection and clarification
+- Schema introspection (meta queries)
+- Safe SQL execution (read-only, no SELECT *)
+- Web interface with CLI fallback
 
 ---
 
-## 🧪 Example Queries
+## Example Queries
 
 Try these in the system:
 
-- `How many customers are from Brazil?`
-- `Which customers have never made a purchase?`
-- `What tables exist in this database?`
-- `Show me recent orders`
-- `Show me orders from the last 30 days`
+- How many customers are from Brazil?
+- Which customers have never made a purchase?
+- What tables exist in this database?
+- Show me recent orders
+- Show me orders from the last 30 days
 
 ---
 
-##  Running the Project
+## Installation Steps
 
-### 📁 Step 1: Go to project directory
+Follow the steps below to set up and run the project locally.
+
+---
+
+### Step 1: Install Python
+
+Ensure Python version 3.10 or higher is installed.
+
+Check your Python version:
 ```bash
-cd nl_sql_reasoner
+python --version
 
-
-##Tree
-Folder PATH listing for volume OS
-Volume serial number is AADA-BDED
-C:.
-├───core
-│   └───__pycache__
-├───data
-├───llm
-├───static
-└───templates
+Talk-To-Your-Data/
+│
+├── core/
+│   ├── intent_parser.py      # Detects user intent and ambiguity
+│   ├── planner.py            # Builds the reasoning plan
+│   ├── sql_generator.py      # Generates safe SQL queries
+│   ├── validator.py          # Enforces SQL safety rules
+│   ├── executor.py           # Executes SQL on the database
+│   └── db.py                 # Database connection handler
+│
+├── data/
+│   └── chinook.db             # SQLite database
+│
+├── templates/
+│   └── index.html             # Web interface (frontend)
+│
+├── static/                    # Static files (CSS/JS if extended)
+│
+├── app.py                     # Flask web application entry point
+├── main.py                    # CLI interface
+├── verify_db.py               # Database verification script
+└── README.md                  # Project documentation
